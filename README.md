@@ -198,7 +198,7 @@ Follow the steps to start the simple web application after the libraries are ins
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+<!-- Make your app  -->
 ## Make your app
 
 There are two options to make your own app:
