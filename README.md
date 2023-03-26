@@ -207,7 +207,7 @@ There are two options to make your own app:
 2. Build on this app, i.e., modify this app by installing this app and then changing everything as per your requirements.
     Check out: [Option2 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option2.md)
 
-Note for Students: 
+Note for Students (42028, UTS): 
 
     I strongly recommend that you choose Option-2 for your project. While the provided app is a basic, vanilla-level baseline, it is important to note that using this app with only minor modifications may result in heavy penalties. To avoid these penalties, I strongly recommend making significant modifications and additions to the app, including but not limited to functionalities, style, pages, UI/UX, AI, look and feel, optimisation and edge-case testing.
 
