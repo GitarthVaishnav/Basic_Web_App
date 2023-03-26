@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block extra_css %}
+    <style>
+      body{
+        padding-top: 100px;
+      }
+    </style>
+{% endblock %}
+{% block content %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+<center><h1 class="display-4">{{ page.name_title }}</h1></center>
+<div>
+    <center><p>{{ page.name_subtitle|richtext }}</p></center>
+</div>
+
+<center>
+  <div class="container-fluid" style="height:100%; padding-top:3%; display: block; overflow: auto;">
+    <div class="row" style="padding-bottom:1%;">
+      <div class="col-6">
+        <button type="button" onclick="changeTheVariableStart()" id="pushMe3" class="btn btn-primary" name="button3">Start</button>
+      </div>
+      <div class="col-6">
+        <button type="button" onclick="changeTheVariableStop()" id="pushMe4" class="btn btn-primary" name="button4">Stop</button>
+      </div>
+    </div>
+    <h4>If video does not load, click the below buttons:</h4>
+      <center>
+        <div style="margin-bottom:10px;">
+          <a type="button" id="ntbtn1" href="../no_video/" target="_blank" class="btn btn-primary" name="button" style="color:white">View in new tab</a>
+        </div>
+      </center>
+    <div class="videoWrapper">
+        <style>
+        .videoWrapper {
+          position=absolute;
+          height=100%;
+        }
+        .videoWrapper iframe {
+          display: inline;
+          height: 450px; width: 790px; border: 2px solid #ccc;
+          margin-bottom:200px;
+          position: relative;
+        }
+      </style>
+
+      <!-- <img id="frame1" style="-webkit-user-select: none;" src="../no_video/" width="800px" height="700px"> -->
+      <iframe id="frame1" class="responsive-iframe"  src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no" ></iframe>
+
+    </div>
+</div>
+</center>
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript">
+      function changeTheVariableStart() {
+         var iframevar1 = document.getElementById('frame1');
+         var nt1 = document.getElementById('ntbtn1');
+         var a = "../camera_feed/";
+         iframevar1.src = a;
+         nt1.href = a;
+      }
+      function changeTheVariableStop() {
+         var iframevar1 = document.getElementById('frame1');
+         var nt1 = document.getElementById('ntbtn1');
+         var a = "../no_video/";
+         iframevar1.src = a;
+         nt1.href = a;
+      }
+    </script>
+{% endblock %}
