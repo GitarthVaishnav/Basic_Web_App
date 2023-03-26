@@ -48,6 +48,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#make-your-app">Make your app</a></li>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -197,8 +198,14 @@ Follow the steps to start the simple web application after the libraries are ins
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- USAGE EXAMPLES -->
+## Make your app
 
+There are two options to make your own app:
+1. Start from scratch, i.e., not building up on this app, but starting fresh and then doing everything on your own.
+    Check out: [Option1 Documentation] ()
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- RESOURCES -->
 ## Resources
 
