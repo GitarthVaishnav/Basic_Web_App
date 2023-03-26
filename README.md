@@ -209,9 +209,9 @@ Follow the steps to start the simple web application after the libraries are ins
 
 There are two options to make your own app:
 1. Start from scratch, i.e., not building up on this app, but starting fresh and then doing everything on your own.
-    Check out: [Option1 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option1.md)
+    Check out: [Option1 Documentation](https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option1.md)
 2. Build on this app, i.e., modify this app by installing this app and then changing everything as per your requirements.
-    Check out: [Option2 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option2.md)
+    Check out: [Option2 Documentation](https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option2.md)
 
 <br>
 
