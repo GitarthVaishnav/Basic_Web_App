@@ -240,7 +240,7 @@ Project Link: [https://github.com/GitarthVaishnav/Basic_Web_App/](https://github
 [issues-shield]: https://img.shields.io/github/issues/GitarthVaishnav/Basic_Web_App.svg?style=for-the-badge
 [issues-url]: https://github.com/GitarthVaishnav/Basic_Web_App/issues
 [license-shield]: https://img.shields.io/github/license/GitarthVaishnav/Basic_Web_App.svg?style=for-the-badge
-[license-url]: https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/LICENSE
+[license-url]: https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/LICENCE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/gitarthvaishnav
 [product-screenshot]: images/screenshot.png
