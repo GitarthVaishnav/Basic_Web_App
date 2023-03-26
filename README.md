@@ -207,15 +207,32 @@ There are two options to make your own app:
 2. Build on this app, i.e., modify this app by installing this app and then changing everything as per your requirements.
     Check out: [Option2 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option2.md)
 
-> **Note for Students (specially for students of the subject: 42028 Deep Learning and CNNs of UTS):**
-> 
-> I strongly recommend that you choose **Option-2** for your project. While the provided app is a basic, vanilla-level baseline, it is important to note that using this app with only minor modifications may result in heavy penalties. To avoid these penalties, I strongly recommend making **significant** modifications and additions to the app, including but not limited to functionalities, style, pages, UI/UX, AI, look and feel, optimisation and edge-case testing.
-> 
-> I would also like to remind you that the provided app is the intellectual property of Gitarth Vaishnav. Any use of this app should be accompanied by proper **attribution** (including but not limited to visibility in the code, report, and the actual interface/system), in accordance with academic integrity policies.
-> 
-> Please note that copying the app as is, with only minor or little modifications, may result in accusations of plagiarism and penalties.
-> 
-> Thank you for your understanding and adherence to the academic integrity policies of the university.
+
+<div class="note">
+    <p><strong>Note for Students (specially for students of the subject: 42028 Deep Learning and CNNs of UTS):</strong></p>
+    <p>I strongly recommend that you choose <strong>Option-2</strong> for your project. While the provided app is a basic, vanilla-level baseline, it is important to note that using this app with only minor modifications may result in heavy penalties. To avoid these penalties, I strongly recommend making <strong>significant</strong> modifications and additions to the app, including but not limited to functionalities, style, pages, UI/UX, AI, look and feel, optimisation and edge-case testing.</p>
+    <p>I would also like to remind you that the provided app is the intellectual property of Gitarth Vaishnav. Any use of this app should be accompanied by proper <strong>attribution</strong> (including but not limited to visibility in the code, report, and the actual interface/system), in accordance with academic integrity policies.</p>
+    <p>Please note that copying the app as is, with only minor or little modifications, may result in accusations of plagiarism and penalties.</p>
+    <p>Thank you for your understanding and adherence to the academic integrity policies of the university.</p>
+</div>
+<style>
+/* Light mode styles */
+.note {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .note {
+        background-color: #2f2f2f;
+        color: #fff;
+        padding: 10px;
+    }
+}
+
+</style>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
