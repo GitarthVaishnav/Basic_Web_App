@@ -231,7 +231,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- LICENSE -->
 ## License
 
-Distributed under the Custom License. See `LICENSE` for more information.
+Distributed under the Custom License. See [`LICENSE`](license-url) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
