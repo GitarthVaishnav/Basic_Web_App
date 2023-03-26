@@ -216,14 +216,11 @@ There are two options to make your own app:
     <p>Thank you for your understanding and adherence to the academic integrity policies of the university.</p>
 </div>
 <style>
-/* Light mode styles */
 .note {
     background-color: #f5f5f5;
     color: #333;
     padding: 10px;
 }
-
-/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     .note {
         background-color: #2f2f2f;
