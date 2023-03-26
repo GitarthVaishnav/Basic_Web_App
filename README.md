@@ -207,7 +207,8 @@ There are two options to make your own app:
 2. Build on this app, i.e., modify this app by installing this app and then changing everything as per your requirements.
     Check out: [Option2 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option2.md)
 
-
+<br>
+<div>
 <div class="note">
     <p><strong>Note for Students (specially for students of the subject: 42028 Deep Learning and CNNs of UTS):</strong></p>
     <p>I strongly recommend that you choose <strong>Option-2</strong> for your project. While the provided app is a basic, vanilla-level baseline, it is important to note that using this app with only minor modifications may result in heavy penalties. To avoid these penalties, I strongly recommend making <strong>significant</strong> modifications and additions to the app, including but not limited to functionalities, style, pages, UI/UX, AI, look and feel, optimisation and edge-case testing.</p>
@@ -228,10 +229,11 @@ There are two options to make your own app:
         padding: 10px;
     }
 }
-
 </style>
+</div>
 
 
+<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- RESOURCES -->
