@@ -209,7 +209,7 @@ There are two options to make your own app:
 
 <br>
 
-> **Note for Students (specially for students of the subject: 42028 Deep Learning and CNNs of UTS):**{: .note}
+> **Note for Students (specially for students of the subject: 42028 Deep Learning and CNNs of UTS):**
 > 
 > I strongly recommend that you choose **Option-2** for your project. While the provided app is a basic, vanilla-level baseline, it is important to note that using this app with only minor modifications may result in heavy penalties. To avoid these penalties, I strongly recommend making **significant** modifications and additions to the app, including but not limited to functionalities, style, pages, UI/UX, AI, look and feel, optimisation and edge-case testing.
 > 
@@ -218,21 +218,6 @@ There are two options to make your own app:
 > Please note that copying the app as is, with only minor or little modifications, may result in accusations of plagiarism and penalties.
 > 
 > Thank you for your understanding and adherence to the academic integrity policies of the university.
-
-<style>
-.note {
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 10px;
-}
-@media (prefers-color-scheme: dark) {
-    .note {
-        background-color: #2f2f2f;
-        color: #fff;
-        padding: 10px;
-    }
-}
-</style>
 
 
 
