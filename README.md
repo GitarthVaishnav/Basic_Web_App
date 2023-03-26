@@ -215,7 +215,7 @@ Note for Students (42028, UTS):
 
     Please note that copying the app as is, with only minor or little modifications, may result in accusations of plagiarism and penalties.
 
-    Thank you for your understanding and adherence to the academic integrity policies of the course.
+    Thank you for your understanding and adherence to the academic integrity policies of the university.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
