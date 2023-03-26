@@ -140,7 +140,7 @@ You require the following to get started:
 
 1. Go to The repository
     ```sh
-    cd <your_path_to>/Basic_Web_App
+    cd <your_path_to_folder>/Basic_Web_App
     ```
 2. Create a virtual environment named `venv`
     ```sh
@@ -166,7 +166,11 @@ You require the following to get started:
     ```sh
     (venv) C:\.... >
     ```
-5. Install the requirements now (make sure venv is activated):
+5. Upgrade pip:
+    ```sh
+    pip install --upgrade pip
+    ```
+6. Install the requirements now (make sure venv is activated):
     ```sh
         pip install -r requirements.txt
     ```

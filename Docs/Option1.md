@@ -6,7 +6,7 @@
 </div>
 
 ## Steps:
-1.	Make a folder wherever you want the web app to be stored. 
+1.	Create a folder wherever you want the web app to be stored. 
 2.	Open terminal in that folder OR change directory to that folder.
     ```sh
     mkdir my_project
@@ -158,35 +158,33 @@
 1. Set up streams
     * Setup model.py
     * Setup views.py
-    * Setup templates
+    * Setup templates (found inside `mysite>mysite>templates`)
 
 2. Set up menus
     * Setup model.py
     * Setup views.py
-    * Setup templates
+    * Setup templates (found inside `mysite>mysite>templates`)
 
 3. Set up flex page
     * Setup model.py
     * Setup views.py
-    * Setup templates
+    * Setup templates (found inside `mysite>mysite>templates`)
     > Use CMS (admin) to create and add content to the pages
 
 4. Set up cam_app
-    * Camera code
     * Setup camera.py `here goes the real time inference code with model`
-    * Model.py
-    * Views.py
-    * Database
+    * Setup model.py
+    * Setup views.py
+    * Setup database_operations.py
     * Setup database file
-    * Setup templates
+    * Setup templates (found inside `mysite>mysite>templates`)
 
 5. Set up cam_app2
-    * Image code
-    * Model.py `here goes the code for the model and file handling`
-    * Views.py
-    * Database
+    * Setup model.py `here goes the code for the model and file handling`
+    * Setup views.py
+    * Setup database_operations.py
     * Setup database file
-    * Setup templates
+    * Setup templates (found inside `mysite>mysite>templates`)
 
 6. All set to go! (Make sure to update and modify all the bits to work according to your requirements)
 
