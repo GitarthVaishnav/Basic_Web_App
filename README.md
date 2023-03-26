@@ -48,11 +48,10 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#resources">Resources</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -124,32 +123,51 @@ Overall, the simple web app is a valuable resource for developers interested in 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/GitarthVaishnav/Basic_Web_App.git
+   ```
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You require the following to get started:
+* A local computer or a compatible edge device
+* Python 3.9
+* NVIDIA GPU (optional)
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/GitarthVaishnav/Basic_Web_App/.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Go to The repository
+    ```sh
+    cd <your_path_to>/Basic_Web_App
+    ```
+2. Create a virtual environment named `venv`
+    ```sh
+    python -m venv venv
+    ```
+3. Activate the virtual environment `venv`
+    Linux/MacOS:
+    ```sh
+    source venv/bin/activate
+    ```
+    Windows:
+    ```sh
+    venv\Scripts\activate
+    ```
+4. Once Virtual Environment is active, your terminal will look like the following:
+    Linux/MacOS:
+    ```sh
+    (venv) apple... $ `or` %
+    ```
+    Windows:
+    ```sh
+    (venv) C:\.... >
+    ```
+5. Install the requirements now (make sure venv is activated)!
+    ```sh
+        pip install -r requirements.txt
+    ```
+    This shall install all the required libraries. If version issues occur - remove version numbers.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,23 +176,36 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Follow the steps to start the simple web application after the libraries are installed:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Go to the directory `mysite`
+    ```sh
+    cd mysite
+    ```
+2. Run the following command (required after every major code update, and first installation)
+    ```sh
+    python manage.py makemigrations
+    ```
+3. Run the following command (required after every major code update, and first installation)
+    ```sh
+    python manage.py migrate 
+    ```
+4. Run the following command (this starts the application)
+    ```sh
+    python manage.py runserver
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- ROADMAP -->
-## Roadmap
+<!-- RESOURCES -->
+## Resources
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/GitarthVaishnav/Basic_Web_App/issues) for a full list of proposed features (and known issues).
+- Learn Wagtail: [Link](https://youtube.com/playlist?list=PLMQHMcNi6ocsS8Bfnuy_IDgJ4bHRRrvub)
+- Django for Data Science: [Link](https://youtube.com/playlist?list=PLuF04jtaO225QdxJKUQJdlu_SvPqBvpjO)
+- Wagtail Documentation: [Link](https://docs.wagtail.org/en/stable/)
+- Django Documentation: [Link](https://docs.djangoproject.com/en/4.1/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -186,7 +217,6 @@ See the [open issues](https://github.com/GitarthVaishnav/Basic_Web_App/issues) f
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -201,7 +231,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the Custom License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -210,23 +240,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@GitarthVaishnav](https://twitter.com/GitarthVaishnav) - gitarthv@outlook.com
+Gitarth Vaishnav - [@GitarthVaishnav](https://linkedin.com/in/gitarthvaishnav)
+
+Email: Gitarthv@outlook.com | Gitarth.Vaishnav@uts.edu.au
+
+
+Github Link: [@GitarthVaishnav](https://github.com/GitarthVaishnav/)
 
 Project Link: [https://github.com/GitarthVaishnav/Basic_Web_App/](https://github.com/GitarthVaishnav/Basic_Web_App/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
