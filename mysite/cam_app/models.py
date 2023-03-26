@@ -2,22 +2,13 @@ from django.db import models
 from django.shortcuts import render
 from django.conf import settings
 
-from modelcluster.fields import ParentalKey
-
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel,
     MultiFieldPanel,
-    InlinePanel,
-    StreamFieldPanel,
-    PageChooserPanel,
 )
-from wagtail.core.models import Page, Orderable
-from wagtail.core.fields import RichTextField, StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.models import Page
+from wagtail.fields import RichTextField
 
-from streams import blocks
-
-import sqlite3, datetime, os
 
 # Create your models here.
 class VideoPage(Page):

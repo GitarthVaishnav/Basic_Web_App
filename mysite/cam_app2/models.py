@@ -5,23 +5,18 @@ from django import forms
 
 from modelcluster.fields import ParentalKey
 
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel,
     MultiFieldPanel,
-    InlinePanel,
-    StreamFieldPanel,
-    PageChooserPanel,
 )
-from wagtail.core.models import Page, Orderable
-from wagtail.core.fields import RichTextField, StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.models import Page
+from wagtail.fields import RichTextField
 from django.core.files.storage import default_storage
 
 from pathlib import Path
 
-from streams import blocks
 
-import sqlite3, datetime, os, uuid, glob
+import os, uuid, glob
 
 str_uuid = uuid.uuid4()  # The UUID for image uploading
 
