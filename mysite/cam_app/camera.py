@@ -50,13 +50,27 @@ class VideoCamera(object):
                 radius = int(round((w2 + h2)*0.25))
                 image = cv2.circle(image, eye_center, radius, (255, 0, 0 ), 4)
         outputImage = image
-        ret, outputImagetoReturn = cv2.imencode('.jpg', outputImage) # check if it work
+        ret, outputImagetoReturn = cv2.imencode('.jpg', outputImage)
+        return outputImagetoReturn.tobytes(), outputImage
+    
+    def get_frame_without_detection(self):
+        success, image = self.video.read()
+        # We are using Motion JPEG, but OpenCV defaults to capture raw images,
+        # so we must encode it into JPEG in order to correctly display the
+        # video stream.
+        outputs = image
+        outputImage = outputs
+        ret, outputImagetoReturn = cv2.imencode('.jpg', outputImage)
         return outputImagetoReturn.tobytes(), outputImage
 
-def generate_frames(camera):
+
+def generate_frames(camera, AI):
     try:
         while True:
-            frame, img = camera.get_frame_with_detection()
+            if AI:
+                frame, img = camera.get_frame_with_detection()
+            if not AI:
+                frame, img = camera.get_frame_without_detection()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
     except Exception as e:
