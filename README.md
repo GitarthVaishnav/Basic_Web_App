@@ -203,9 +203,22 @@ Follow the steps to start the simple web application after the libraries are ins
 
 There are two options to make your own app:
 1. Start from scratch, i.e., not building up on this app, but starting fresh and then doing everything on your own.
-    Check out: [Option1 Documentation] ()
+    Check out: [Option1 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option1.md)
+2. Build on this app, i.e., modify this app by installing this app and then changing everything as per your requirements.
+    Check out: [Option2 Documentation] (https://github.com/GitarthVaishnav/Basic_Web_App/blob/master/Docs/Option2.md)
+
+Note for 42028 Students: 
+
+    I strongly recommend that you choose Option-2 for your project. While the provided app is a basic, vanilla-level baseline, it is important to note that using this app with only minor modifications may result in heavy penalties. To avoid these penalties, I strongly recommend making significant modifications and additions to the app, including but not limited to functionalities, style, pages, UI/UX, AI, look and feel, optimisation and edge-case testing.
+
+    I would also like to remind you that the provided app is the intellectual property of Gitarth Vaishnav. Any use of this app should be accompanied by proper attribution, in accordance with academic integrity policies.
+
+    Please note that copying the app as is, with only minor or little modifications, may result in accusations of plagiarism and penalties.
+
+    Thank you for your understanding and adherence to the academic integrity policies of the course.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- RESOURCES -->
 ## Resources
 
