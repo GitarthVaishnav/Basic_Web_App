@@ -13,4 +13,4 @@ opencv-python
 Pillow
 requests
 uuid
-wagtailp
+wagtail
