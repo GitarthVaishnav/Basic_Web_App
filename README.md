@@ -146,7 +146,8 @@ You require the following to get started:
     ```sh
     python -m venv venv
     ```
-3. Activate the virtual environment `venv`
+3. Activate the virtual environment `venv`:
+
     Linux/MacOS:
     ```sh
     source venv/bin/activate
@@ -156,6 +157,7 @@ You require the following to get started:
     venv\Scripts\activate
     ```
 4. Once Virtual Environment is active, your terminal will look like the following:
+
     Linux/MacOS:
     ```sh
     (venv) apple... $ `or` %
@@ -164,7 +166,7 @@ You require the following to get started:
     ```sh
     (venv) C:\.... >
     ```
-5. Install the requirements now (make sure venv is activated)!
+5. Install the requirements now (make sure venv is activated):
     ```sh
         pip install -r requirements.txt
     ```
