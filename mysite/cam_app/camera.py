@@ -13,12 +13,17 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import time
 
+
+
 class VideoCamera(object):
     def __init__(self):
         # Using OpenCV to capture from device 0. If you have trouble capturing
         # from a webcam, comment the line below out and use a video file
         # instead.
-        self.video = cv2.VideoCapture(0)
+        self.video = cv2.VideoCapture('rtsp://admin:admin@192.168.1.187:8554/live')
+        self.video.set(cv2.CAP_PROP_BUFFERSIZE, 0);
+        #cv2.waitKey(500);
+        #self.video.set(5, 5);
         # If you decide to use video.mp4, you must have this file in the folder
         # as the main.py.
         # self.video = cv2.VideoCapture('video.mp4')
@@ -54,6 +59,8 @@ class VideoCamera(object):
         return outputImagetoReturn.tobytes(), outputImage
     
     def get_frame_without_detection(self):
+        
+        #time.sleep(0.3)
         success, image = self.video.read()
         # We are using Motion JPEG, but OpenCV defaults to capture raw images,
         # so we must encode it into JPEG in order to correctly display the
