@@ -5,7 +5,50 @@
       body{
         padding-top: 100px;
       }
-    </style>
+            .videoWrapper {
+              position: relative;
+              width: 100%;
+              padding-bottom: 56.25%; /* aspect ratio: 16:9 */
+              overflow: hidden;
+            }
+            
+            #frame1 {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 2px solid #ccc;
+            }
+            .responsive-iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ccc;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+}
+
+
+      </style>
+            
 {% endblock %}
 {% block content %}
 {% load static wagtailcore_tags wagtailimages_tags %}
@@ -31,26 +74,18 @@
       <center>
         <div style="margin-bottom:10px;">
           <button type="button" id="ntbtn1" class="btn btn-primary" name="button" style="color:white" disabled>View in new tab</a>
+          
         </div>
       </center>
-    <div class="videoWrapper">
-        <style>
-        .videoWrapper {
-          position=absolute;
-          height=100%;
-        }
-        .videoWrapper iframe {
-          display: inline;
-          height: 450px; width: 790px; border: 2px solid #ccc;
-          margin-bottom:200px;
-          position: relative;
-        }
-      </style>
 
-      <!-- <img id="frame1" style="-webkit-user-select: none;" src="../no_video/" width="800px" height="700px"> -->
-      <iframe id="frame1" class="responsive-iframe"  src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no" ></iframe>
+        <!-- <div class="videoWrapper">
+          <iframe id="frame1" class="responsive-iframe" src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no"></iframe>          
+        </div> -->
+        <div class="responsive-iframe-wrapper" id="iframe-container">
+          <iframe id="frame1" class="responsive-iframe" src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>        
+        <button id="fullscreenBtn" type="button" class="btn btn-primary">Toggle Fullscreen</button>
 
-    </div>
 </div>
 </center>
 {% endblock %}
@@ -91,5 +126,52 @@
          document.getElementById('pushMe4').disabled = true;
          document.getElementById('ntbtn1').disabled = true;
       }
+    function resizeIframe() {
+    const container = document.querySelector('.videoWrapper');
+    const iframe = document.getElementById('frame1');
+    const aspectRatio = 16 / 9;
+
+    iframe.style.height = container.clientWidth / aspectRatio + 'px';
+  }
+  document.getElementById('fullscreenBtn').addEventListener('click', function() {
+  toggleFullScreen(document.getElementById('frame1'));
+});
+
+function toggleFullScreen(element) {
+  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    }
+    element.classList.add("fullscreen");
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+    element.classList.remove("fullscreen");
+  }
+}
+document.getElementById("frame1").addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+
+
+  document.getElementById("iframe-container").addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+
+
+  window.addEventListener('resize', resizeIframe);
     </script>
 {% endblock %}
