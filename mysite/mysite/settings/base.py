@@ -15,8 +15,12 @@ import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
+# YOLO_DIR = os.path.join(BASE_DIR, 'yolov5')
+WEIGHTS_DIR = os.path.join(BASE_DIR, 'weights')
+DATA_DIR = os.path.join(BASE_DIR, 'data')
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
+IOU_THRESHOLD = 0.45
+CONF_THRESHOLD = 0.20
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
