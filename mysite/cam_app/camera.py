@@ -1,17 +1,5 @@
-import pickle
-from django.conf import settings
-from cam_app import views
-from django.http import StreamingHttpResponse
-import sqlite3
-import datetime
-
-# import some common libraries
-import numpy as np
-import os, json, cv2, random, glob, uuid
-import matplotlib.pyplot as plt
-
-from pathlib import Path
-import time
+import cv2
+from yolov5 import YOLOV5
 
 class VideoCamera(object):
     def __init__(self):
