@@ -17,82 +17,49 @@ from pathlib import Path
 
 
 import os, uuid, glob, cv2
-import torch
 import numpy as np
-from pathlib import Path
-from torch.utils.data import DataLoader, Dataset
-from PIL import Image, ExifTags, ImageOps
-from django.conf import settings
-from utils.general import (
-    check_img_size, non_max_suppression, scale_coords
-)
-from utils.torch_utils import select_device
-from utils.plots import Annotator, colors
-from models.common import DetectMultiBackend
-from utils.augmentations import letterbox
+
 from django.conf import settings
 
 str_uuid = uuid.uuid4()  # The UUID for image uploading
+import tensorflow as tf
 
-def detector(model, image, img_size=640, conf_thres=0.20, iou_thres=0.40, max_det=1000, line_thickness=3, object_count={}):
-    device = model.device
-    
-    # Prepare the image
-    img = letterbox(image, img_size, stride=model.stride, auto=True)[0]
-    img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
-    img = np.ascontiguousarray(img)
+# Load your custom TensorFlow model here
+def load_tf_model(model_path):
+    model = tf.keras.models.load_model(model_path)
+    return model
 
-    # Convert image to torch tensor
-    img_tensor = torch.from_numpy(img).to(device)
-    img_tensor = img_tensor.half() if model.fp16 else img_tensor.float()
-    img_tensor /= 255.0
-    if len(img_tensor.shape) == 3:
-        img_tensor = img_tensor[None]
+def preprocess_image(image, target_size=(32, 32)):
+    image = cv2.resize(image, target_size)
+    image = image / 255.0
+    image = np.expand_dims(image, axis=0)
+    return image
 
-    # Inference
-    pred = model(img_tensor)
+def tf_detector(model, image, class_names):
+    input_image = preprocess_image(image)
+    predictions = model.predict(input_image)
 
-    # NMS
-    pred = non_max_suppression(pred, conf_thres, iou_thres, classes=None, agnostic=False, max_det=max_det)
+    class_idx = np.argmax(predictions)
+    class_name = class_names[class_idx]
 
-    # Process predictions
-    im0 = image.copy()
-    gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
-    annotator = Annotator(im0, line_width=line_thickness, example=str(model.names))
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 12
+    font_thickness = 4
+    text_size = cv2.getTextSize(class_name, font, font_scale, font_thickness)[0]
+    text_x = image.shape[1] - text_size[0] - 100
+    text_y = 300
+    cv2.putText(image, class_name, (text_x, text_y), font, font_scale, (0, 0, 0), font_thickness)
+    print(class_name)
 
-    for i, det in enumerate(pred):  # per image
-        if len(det):
-            # Rescale boxes from img_size to im0 size
-            det[:, :4] = scale_coords(img_tensor.shape[2:], det[:, :4], im0.shape).round()
+    return image
 
-            # Count objects
-            for c in det[:, -1].unique():
-                n = (det[:, -1] == c).sum()
-                # object_count[model.names[int(c)]] += int(n.item())
+def get_model_and_running_func(model_path):
+    model = load_tf_model(model_path)
+    return model, tf_detector
 
-            # Draw boxes and labels
-            for *xyxy, conf, cls in reversed(det):
-                c = int(cls)
-                label = f'{model.names[c]} {conf:.2f}'
-                annotator.box_label(xyxy, label, color=colors(c, True))
+# Define your class names here
+class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
-    output_image = annotator.result()
-
-    return output_image, object_count
-
-def get_model_and_running_func(weights_path, data_path, img_size=640):
-    device = select_device()
-    
-    # Load the model
-    model = DetectMultiBackend(weights_path, device=device, dnn=False, data=data_path, fp16=False)
-    
-    # Check and set the image size
-    img_size = check_img_size(img_size, s=model.stride)
-    
-    # Warm up the model
-    model.warmup(imgsz=(1, 3, img_size, img_size))
-    
-    return model, detector
 
 
 
@@ -152,7 +119,7 @@ class ImagePage(Page):
         return context
 
     def serve(self, request):
-        model, function_run = get_model_and_running_func(weights_path=str(os.path.join(settings.WEIGHTS_DIR, 'yolov5s.pt')), data_path=str(os.path.join(settings.DATA_DIR, 'coco.yaml')))
+        model, function_run = get_model_and_running_func(model_path=str(os.path.join(settings.WEIGHTS_DIR, 'my_model.h5')))
         emptyButtonFlag = False
         if request.POST.get('start')=="":
             context = self.reset_context(request)
@@ -172,7 +139,7 @@ class ImagePage(Page):
                     img = cv2.imread(filepath.strip())
                     threshold = float(settings.CONF_THRESHOLD)
                     iou_threshold=float(settings.IOU_THRESHOLD)
-                    output_image, object_count = function_run(model, img, conf_thres = threshold, iou_thres=iou_threshold)
+                    output_image = function_run(model, img, class_names)
                     fn = filename.split('.')[:-1][0]
                     r_filename = f'result_{fn}.jpeg'
                     print(r_filename)
