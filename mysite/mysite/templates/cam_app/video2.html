@@ -34,7 +34,9 @@
   width: 100%;
   height: 100%;
   border: 2px solid #ccc;
+  object-fit: cover;
 }
+
 
 .fullscreen {
   position: fixed;
@@ -70,11 +72,11 @@
         <button type="button" onclick="changeTheVariableStop()" id="pushMe4" class="btn btn-primary" name="button4" disabled>Stop</button>
       </div>
     </div>
-    <h4>If video does not load, click the below buttons:</h4>
+    <h4>If video does not load, click the button below:</h4>
       <center>
         <div style="margin-bottom:10px;">
-          <button type="button" id="ntbtn1" class="btn btn-primary" name="button" style="color:white" disabled>View in new tab</a>
-          
+          <!-- <button type="button" id="ntbtn1" class="btn btn-primary" name="button" style="color:white" disabled>View in new tab</a> -->
+          <button id="fullscreenBtn" type="button" name="button" style="color:white" class="btn btn-primary" disabled>Toggle Fullscreen</button>
         </div>
       </center>
 
@@ -84,7 +86,7 @@
         <div class="responsive-iframe-wrapper" id="iframe-container">
           <iframe id="frame1" class="responsive-iframe" src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no" allowfullscreen></iframe>
         </div>        
-        <button id="fullscreenBtn" type="button" class="btn btn-primary">Toggle Fullscreen</button>
+        
 
 </div>
 </center>
@@ -92,39 +94,39 @@
 {% block extra_js %}
     <script type="text/javascript">
       var url = "../no_video/"
-      document.getElementById("ntbtn1").addEventListener("click", function() {
-        window.open(url, "_blank");
-      });
+      // document.getElementById("fullscreenBtn").addEventListener("click", function() {
+      //   window.open(url, "_blank");
+      // });
       function changeTheVariableStartNorm() {
          var iframevar1 = document.getElementById('frame1');
-         var nt1 = document.getElementById('ntbtn1');
+        //  var nt1 = document.getElementById('fullscreenBtn');
          var a = "../camera_feed/";
          iframevar1.src = a;
          url = a;
          document.getElementById('pushMe5').disabled = true;
          document.getElementById('pushMe4').disabled = false;
-         document.getElementById('ntbtn1').disabled = false;
+         document.getElementById('fullscreenBtn').disabled = false;
       }
       function changeTheVariableStartAI() {
          var iframevar1 = document.getElementById('frame1');
-         var nt1 = document.getElementById('ntbtn1');
+        //  var nt1 = document.getElementById('fullscreenBtn');
          var a = "../camera_feed_AI/";
          iframevar1.src = a;
          url = a;
          document.getElementById('pushMe3').disabled = true;
          document.getElementById('pushMe4').disabled = false;
-         document.getElementById('ntbtn1').disabled = false;
+         document.getElementById('fullscreenBtn').disabled = false;
       }
       function changeTheVariableStop() {
          var iframevar1 = document.getElementById('frame1');
-         var nt1 = document.getElementById('ntbtn1');
+        //  var nt1 = document.getElementById('fullscreenBtn');
          var a = "../no_video/";
          iframevar1.src = a;
          url = a;
          document.getElementById('pushMe5').disabled = false;
          document.getElementById('pushMe3').disabled = false;
          document.getElementById('pushMe4').disabled = true;
-         document.getElementById('ntbtn1').disabled = true;
+         document.getElementById('fullscreenBtn').disabled = true;
       }
     function resizeIframe() {
     const container = document.querySelector('.videoWrapper');
